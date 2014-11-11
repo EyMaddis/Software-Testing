@@ -7,17 +7,14 @@ public class Book {
 	private boolean bestseller = false;
 
 	public Book() {
-		this.basePrice = 0;
-		this.vat = 0;
-		this.discount = 0;
-		this.bestseller = false;
+		this(0,0,0,false);
 	}
 
 	public Book(double basePrice, double discount, double vat, boolean bestseller) {
-		this.basePrice = basePrice;
-		this.discount = discount;
-		this.vat = vat;
-		this.bestseller = bestseller;
+		setBasePrice(basePrice);
+		setDiscount(discount);
+		setVat(vat);
+		if(bestseller) setBestSeller();
 	}
 
 	public double getBasePrice() {
@@ -25,7 +22,7 @@ public class Book {
 	}
 
 	public void setBasePrice(double basePrice) {
-		this.basePrice = basePrice;
+		this.basePrice = Math.max(basePrice, 1D);
 		setSellPrice();
 	}
 
@@ -34,7 +31,7 @@ public class Book {
 	}
 
 	public void setVat(double vat) {
-		this.vat = vat;
+		this.vat = Math.max(vat, 0);
 		setSellPrice();
 	}
 
@@ -48,7 +45,7 @@ public class Book {
 			this.discount = 50;
 		} 
 		else {
-			this.discount = discount;
+			this.discount = Math.max(discount, 0);
 		}
 		setSellPrice();
 	}
