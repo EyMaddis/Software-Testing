@@ -20,7 +20,7 @@
 <must-have><![CDATA[No]]></must-have>
 <description><![CDATA[The user must be able to set a base price for a book.]]></description>
 <notes><![CDATA[]]></notes>
-<test-case-methods><![CDATA[fi.utu.library.BookTest.testGetBasePrice,fi.utu.library.BookTest.testSecondConstructorConstraints,fi.utu.library.BookTest.testSetBasePrice]]></test-case-methods>
+<test-case-methods><![CDATA[fi.utu.library.BookTest.testBasePrice]]></test-case-methods>
 <dependencies><![CDATA[]]></dependencies>
 </requirement>
 <requirement>
@@ -33,7 +33,7 @@
 <must-have><![CDATA[No]]></must-have>
 <description><![CDATA[The base price of a book should be greater than zero.]]></description>
 <notes><![CDATA[]]></notes>
-<test-case-methods><![CDATA[fi.utu.library.BookTest.testBasePrice,fi.utu.library.BookTest.testBasePriceNotNegative]]></test-case-methods>
+<test-case-methods><![CDATA[fi.utu.library.BookTest.testBasePriceNotNegative]]></test-case-methods>
 <dependencies><![CDATA[]]></dependencies>
 </requirement>
 <requirement>
