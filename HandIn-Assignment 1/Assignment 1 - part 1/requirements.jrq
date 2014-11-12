@@ -205,31 +205,4 @@
 <test-case-methods><![CDATA[fi.utu.library.BookTest.testDiscountMax50]]></test-case-methods>
 <dependencies><![CDATA[]]></dependencies>
 </requirement>
-<requirement>
-<id><![CDATA[16]]></id>
-<category><![CDATA[]]></category>
-<sub-category><![CDATA[]]></sub-category>
-<title><![CDATA[Sale]]></title>
-<target-release><![CDATA[]]></target-release>
-<priority><![CDATA[3]]></priority>
-<must-have><![CDATA[No]]></must-have>
-<description><![CDATA[The sale price of a book is 60% of the original price, including VAT.]]></description>
-<notes><![CDATA[]]></notes>
-<test-case-methods><![CDATA[fi.utu.library.BookTest.testSale]]></test-case-methods>
-<dependencies><![CDATA[]]></dependencies>
-</requirement>
-<requirement>
-<id><![CDATA[17]]></id>
-<category><![CDATA[]]></category>
-<sub-category><![CDATA[]]></sub-category>
-<title><![CDATA[Sale - No BestSeller]]></title>
-<target-release><![CDATA[]]></target-release>
-<priority><![CDATA[3]]></priority>
-<must-have><![CDATA[No]]></must-have>
-<description><![CDATA[A book that is a best seller cannot be on sale, and vice-versa.
-EDIT: also no discounts for books on sale.]]></description>
-<notes><![CDATA[]]></notes>
-<test-case-methods><![CDATA[fi.utu.library.BookTest.testSaleNoBestseller]]></test-case-methods>
-<dependencies><![CDATA[]]></dependencies>
-</requirement>
 </requirements>
