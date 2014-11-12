@@ -19,7 +19,7 @@ public class BookTest {
 	public void testBookDefaultConstructor() {
 		// first constructor
 		assertNotNull(book);
-		assertEquals(0.0, book.getBasePrice(), 0.1);
+		assertEquals(1.0, book.getBasePrice(), 0.1);
 		assertEquals(0.0, book.getDiscount(), 0.1);
 		assertEquals(0.0, book.getVat(), 0.1);
 		assertFalse(book.getBestSeller());
