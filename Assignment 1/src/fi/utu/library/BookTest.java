@@ -231,5 +231,41 @@ public class BookTest {
 		book = new Book(10.0, 5.0, 3.0, false);
 		assertTrue(book.getSellPrice() > 0.0);
 	}
+	
+	// 
+	@Test
+	public void testSale(){
+		book.setBasePrice(100D);
+		book.setDiscount(0);
+		
+		double oldPrice = book.getSellPrice();
+		assertFalse(book.getOnSale());
+		book.setOnSale();
+		assertTrue(book.getOnSale());
+		assertEquals(oldPrice*(100-Book.SALE_DISCOUNT)/100, book.getSellPrice(), 0.001);
+	}
+	
+	@Test
+	public void testSaleNoBestseller(){
+		// verify that setup is correct
+		assertFalse(book.getOnSale());
+		assertFalse(book.getBestSeller());
 
+		book.setBestSeller();
+		assertTrue(book.getBestSeller());
+		
+		book.setOnSale(); // not possible, because it is a bestseller
+		assertFalse(book.getOnSale());
+		
+		book = new Book();
+		// verify that setup is still correct
+		assertFalse(book.getOnSale());
+		assertFalse(book.getBestSeller());
+		
+		book.setOnSale();
+		assertTrue(book.getOnSale());
+		
+		book.setBestSeller(); // not possible, because it is on sale
+		assertFalse(book.getBestSeller());
+	}
 }

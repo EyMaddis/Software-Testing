@@ -20,7 +20,7 @@
 <must-have><![CDATA[No]]></must-have>
 <description><![CDATA[The user must be able to set a base price for a book.]]></description>
 <notes><![CDATA[]]></notes>
-<test-case-methods><![CDATA[fi.utu.library.BookTest.testGetBasePrice,fi.utu.library.BookTest.testSecondConstructorConstraints,fi.utu.library.BookTest.testSetBasePrice]]></test-case-methods>
+<test-case-methods><![CDATA[fi.utu.library.BookTest.testBasePrice,fi.utu.library.BookTest.testSecondConstructorConstraints]]></test-case-methods>
 <dependencies><![CDATA[]]></dependencies>
 </requirement>
 <requirement>
@@ -203,6 +203,33 @@
 <description><![CDATA[If the user tries to set a discount larger than 50 %, the discount should be set to 50 %.]]></description>
 <notes><![CDATA[]]></notes>
 <test-case-methods><![CDATA[fi.utu.library.BookTest.testDiscountMax50]]></test-case-methods>
+<dependencies><![CDATA[]]></dependencies>
+</requirement>
+<requirement>
+<id><![CDATA[16]]></id>
+<category><![CDATA[]]></category>
+<sub-category><![CDATA[]]></sub-category>
+<title><![CDATA[Sale]]></title>
+<target-release><![CDATA[]]></target-release>
+<priority><![CDATA[3]]></priority>
+<must-have><![CDATA[No]]></must-have>
+<description><![CDATA[The sale price of a book is 60% of the original price, including VAT.
+EDIT: Discounts are ignored with bestsellers.]]></description>
+<notes><![CDATA[]]></notes>
+<test-case-methods><![CDATA[fi.utu.library.BookTest.testSale]]></test-case-methods>
+<dependencies><![CDATA[]]></dependencies>
+</requirement>
+<requirement>
+<id><![CDATA[17]]></id>
+<category><![CDATA[]]></category>
+<sub-category><![CDATA[]]></sub-category>
+<title><![CDATA[No Bestseller Sales]]></title>
+<target-release><![CDATA[]]></target-release>
+<priority><![CDATA[3]]></priority>
+<must-have><![CDATA[No]]></must-have>
+<description><![CDATA[A book that is a best seller cannot be on sale, and vice-versa]]></description>
+<notes><![CDATA[]]></notes>
+<test-case-methods><![CDATA[fi.utu.library.BookTest.testSaleNoBestseller]]></test-case-methods>
 <dependencies><![CDATA[]]></dependencies>
 </requirement>
 </requirements>
