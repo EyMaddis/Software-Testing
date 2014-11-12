@@ -1,11 +1,14 @@
 package fi.utu.library;
 public class Book {
+	public static final double SALE_DISCOUNT = 60;
+	
 	private double basePrice = 0;
 	private double vat = 0;
 	private double discount = 0;
 	private double sellPrice;
 	private boolean bestseller = false;
-
+	private boolean onSale = false;
+	
 	public Book() {
 		this(0,0,0,false);
 	}
@@ -17,6 +20,20 @@ public class Book {
 		if(bestseller) setBestSeller();
 	}
 
+	public boolean getOnSale(){
+		return onSale;
+	}
+	
+	public void setOnSale(){
+		if(!bestseller) {
+			onSale = true;
+			setSellPrice();
+		}
+		else {
+			System.out.println("Book can't be on sale if it's a bestseller");
+		}
+	}
+	
 	public double getBasePrice() {
 		return basePrice;
 	}
@@ -55,8 +72,13 @@ public class Book {
 	}
 	
 	public void setBestSeller(){
-		this.bestseller = true;
-		setSellPrice();
+		if(onSale) {
+			System.out.println("Book on sale can't be bestseller");
+		}
+		else {
+			this.bestseller = true;
+			setSellPrice();			
+		}
 	}
 
 	public double getSellPrice() {
@@ -64,18 +86,15 @@ public class Book {
 	}
 
 	private void setSellPrice() {
-		if(basePrice > 0){
-			if(bestseller == true){
-				sellPrice = basePrice *((100 + (vat - discount* 0.5)) / 100);
-			}
-			else{
-			sellPrice = basePrice * ((100 + (vat - discount)) / 100);
-			}
+		if(bestseller == true){
+			sellPrice = basePrice *((100 + (vat - discount* 0.5)) / 100);
 		}
-		else
-		{
-			System.out.println("The base price must be greater than zero"); 
+		else{
+			double tempDiscount = discount;
+			if(onSale) {
+				tempDiscount = SALE_DISCOUNT;
+			} 
+			sellPrice = basePrice * ((100 + (vat - tempDiscount)) / 100);
 		}
 	}
-
 }
