@@ -1,0 +1,12 @@
+IPC_1:52:super( w, h, d ); is deleted
+JSD_1:44:static is deleted
+JSI_1:7:static is inserted
+JSI_2:9:static is inserted
+JSI_3:11:static is inserted
+JSI_4:13:static is inserted
+JSI_5:42:static is inserted
+JID_1:44:static double result0 => static double result;
+IHI_1:8:double depth; is added.
+IHI_2:8:double height; is added.
+IHI_3:8:double vol; is added.
+IHI_4:8:double width; is added.
